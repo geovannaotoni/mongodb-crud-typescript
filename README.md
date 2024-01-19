@@ -1,6 +1,6 @@
 # Node.js Blog CRUD Application
 
-Este é um projeto Node.js, podendo ser feito tanto em JavaScript ou TypeScript(diferencial) para criar um CRUD (Create, Read, Update, Delete) para uma aplicação de blog. O projeto utiliza MongoDB como banco de dados e inclui um Dockerfile e um docker-compose para facilitar a implantação e execução.
+Este é um projeto Node.js feito em TypeScript para criar um CRUD (Create, Read, Update, Delete) para uma aplicação de blog. O projeto utiliza MongoDB como banco de dados e inclui um Dockerfile e um docker-compose para facilitar a implantação e execução. Essa aplicação foi realizada para o processo seletivo da empresa [BigTrade](https://github.com/Bigtrade-Fintech).
 
 ## Pré-requisitos
 
@@ -11,29 +11,19 @@ Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina ante
 
 ## Configuração do Ambiente
 
-1. Clone este repositório:
-
-    ```bash
-    git clone git@github.com:Bigtrade-Fintech/teste-tecnico-bigtrade.git
-    ```
-
-2. Navegue até o diretório do projeto:
-
-    ```bash
-    cd teste-tecnico-bigtrade
-    ```
-
-3. As variáveis de ambiente estão presentes no docker-compose.yml
+1. Clone este repositório.
+2. Navegue até o diretório do projeto.
+3. Rode o comando `npm install`.
 
 ## Docker
 
-O projeto inclui um Dockerfile e um docker-compose.yaml para facilitar a configuração e execução do ambiente. Para iniciar o aplicativo, execute o seguinte comando:
+O projeto inclui um Dockerfile e um docker-compose.yaml para facilitar a configuração e execução do ambiente. Em adição, para a elaboração do código, foi utilizado o arquivo `docker-compose-dev.yml` que possui configurações adicionais de modo a auxiliar no desenvolvimento. Para iniciar a aplicação, execute o seguinte comando:
 
 ```bash
-docker compose up -d
+docker-compose -f docker-compose-dev.yml up -d --build
 ```
 
-O aplicativo estará acessível em http://localhost:3000.
+O aplicativo estará acessível em `http://localhost:3000`.
 
 # Estrutura do Projeto
 
@@ -43,6 +33,8 @@ A estrutura do projeto é organizada seguindo o padrão de arquitetura MVCS da s
   - **models/**: Modelos de dados MongoDB.
   - **services/**: Serviços que serão chamados na aplicação.
   - **controllers/**: Controladores para lidar com as operações CRUD.
+  - **routes/**: Rotas dos endpoints da aplicação.
+  - **middlewares/**: Middlewares da aplicação.
   - **index.js**: Ponto de entrada da aplicação.
 - **docker-compose.yml**: Arquivo de configuração do Docker Compose.
 
@@ -54,6 +46,7 @@ A API oferece os seguintes endpoints:
 
 - `POST /users`: Criar um novo usuário.
 - `PUT /users/:id`: Atualizar informações do usuário.
+- `GET /users/`: Retorna todos os usuários
 - `GET /users/:id`: Retorna os dados do usuário de acordo com o id
 - `DELETE /users/:id`: Excluir um usuário.
 
@@ -85,23 +78,11 @@ A API oferece os seguintes endpoints:
   }
   ```
 
-# Entrega
-
-Para realizar a entrega, o cadidato deverá abrir um PR para a main com seu nome.
-Exemplo: João das Couves
-
-```bash
-joao-das-couves
-```
-Em caso de dúvidas, siga o link abaixo:
-- [How to create a pull request in GitHub](https://opensource.com/article/19/7/create-pull-request-github)
-
 # Diferenciais
 
-Serão considerados diferenciais, caso o candidato consiga aplicar as seguintes práticas:
+Foram aplicadas as seguintes práticas:
 
 - Realizar o projeto em Typescript.
 - Programação Orientada a Objetos (POO).
 - Princípios SOLID
 - Testes (unitários e/ou de integração)
-
