@@ -1,6 +1,6 @@
 # Node.js Blog CRUD Application
 
-Este é um projeto Node.js feito em TypeScript para criar um CRUD (Create, Read, Update, Delete) para uma aplicação de blog. O projeto utiliza MongoDB como banco de dados e inclui um Dockerfile e um docker-compose para facilitar a implantação e execução. Essa aplicação foi realizada para o processo seletivo da empresa [BigTrade](https://github.com/Bigtrade-Fintech).
+Este é um projeto Node.js feito em TypeScript para criar um CRUD (Create, Read, Update, Delete) para uma aplicação de blog. O projeto utiliza MongoDB como banco de dados e inclui um Dockerfile e um docker-compose para facilitar a implantação e execução. Essa aplicação foi realizada para a empresa [BigTrade](https://github.com/Bigtrade-Fintech).
 
 ## Pré-requisitos
 
