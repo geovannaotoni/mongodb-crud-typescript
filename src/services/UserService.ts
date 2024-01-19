@@ -53,10 +53,16 @@ export default class UserService {
   }
 
   public async delete(id: number): Promise<ServiceResponse<ServiceResponseMessage>> {
-    await this.userModel.delete(id);
+    const userDeleted = await this.userModel.delete(id);
+    if (userDeleted) {
+      return {
+        status: "SUCCESSFUL",
+        data: { message: 'User deleted' },
+      }
+    }
     return {
-      status: "SUCCESSFUL",
-      data: { message: 'User deleted' },
+      status: "NOT_FOUND",
+      data: { message: 'User not found' } 
     }
   }
 }

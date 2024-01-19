@@ -48,8 +48,8 @@ class UserModel {
       return await this.model.findOneAndUpdate({ id }, user, { new: true });
     }
 
-    public async delete(id: number): Promise<void> {
-      await this.model.deleteOne({ id });
+    public async delete(id: number): Promise<IUser | null> {
+      return await this.model.findOneAndDelete({ id });
     }
 }
 
